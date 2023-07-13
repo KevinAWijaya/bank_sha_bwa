@@ -1,9 +1,29 @@
+import 'dart:async';
+
 import 'package:bank_sha/shared/constants.dart';
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/pages/onboarding_page.dart';
 import 'package:flutter/material.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
+
+  @override
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  @override
+  void initState() {
+    super.initState();
+
+    Timer(
+      const Duration(seconds: 2),
+      () {
+        Navigator.pop(context, MaterialPageRoute(builder: (context) => const OnboardingPage()));
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +35,7 @@ class SplashPage extends StatelessWidget {
           height: 50,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("${imagePath}img_logo_dart.png"),
+              image: AssetImage("${imagePath}img_logo_dark.png"),
             ),
           ),
         ),
