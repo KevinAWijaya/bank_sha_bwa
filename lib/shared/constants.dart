@@ -1,1 +1,1 @@
-String imagePath = "assets/";
+const String imagePath = "assets/";

@@ -2,8 +2,9 @@ import 'dart:async';
 
 import 'package:bank_sha/shared/constants.dart';
 import 'package:bank_sha/shared/theme.dart';
-import 'package:bank_sha/ui/pages/onboarding_page.dart';
 import 'package:flutter/material.dart';
+
+import '../../shared/routes/route_navigations.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -20,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
     Timer(
       const Duration(seconds: 2),
       () {
-        Navigator.pop(context, MaterialPageRoute(builder: (context) => const OnboardingPage()));
+        VNavigation.onBoardingPage(context);
       },
     );
   }
@@ -33,7 +34,7 @@ class _SplashPageState extends State<SplashPage> {
         child: Container(
           width: 155,
           height: 50,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage("${imagePath}img_logo_dark.png"),
             ),
